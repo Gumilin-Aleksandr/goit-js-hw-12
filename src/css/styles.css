@@ -6,6 +6,11 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+h1 {
+  text-align: left;
 }
 #search-form {
   display: flex;
@@ -130,4 +135,8 @@ button:focus {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.load-more-btn {
+  margin: 20px;
 }

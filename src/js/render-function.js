@@ -11,7 +11,7 @@ const lightbox = new SimpleLightbox('.gallery a', {
 
 export function renderGallery(images) {
   const gallery = document.querySelector('#gallery');
-  gallery.innerHTML = '';
+  //gallery.innerHTML = '';
   const markup = images
     .map(
       ({
@@ -35,7 +35,14 @@ export function renderGallery(images) {
     )
     .join('');
 
-  gallery.innerHTML = markup;
+  gallery.insertAdjacentHTML('beforeend', markup);
 
   lightbox.refresh();
+}
+
+export function smoothScroll() {
+  const cardHeight =
+    document.querySelector('.gallery-item')?.getBoundingClientRect().height ||
+    100;
+  window.scrollBy({ top: cardHeight * 2, behavior: 'smooth' });
 }
